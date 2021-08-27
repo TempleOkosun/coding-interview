@@ -16,4 +16,4 @@
 
 function pyramid(n) {}
 
-module.exports = pyramid;
+module.exports = pyramid

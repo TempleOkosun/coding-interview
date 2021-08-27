@@ -8,6 +8,26 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+class Queue {
+  constructor() {
+    this.data = []
+  }
 
-module.exports = Queue;
+  add(record) {
+    // add to the front of an array
+    this.data.unshift(record)
+  }
+
+  remove() {
+    return this.data.pop()
+  }
+}
+
+const ticketQueue = new Queue()
+
+ticketQueue.add('Temple')
+ticketQueue.length
+ticketQueue.remove()
+
+console.log(ticketQueue)
+module.exports = Queue

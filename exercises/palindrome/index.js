@@ -7,6 +7,22 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  // every() method tests whether all elements in the array pass the test implemented by the provided function
+  const isEqualElementOnOtherSide = (currentValue, index, inputArray) =>
+    currentValue === inputArray[inputArray.length - index - 1]
+  return str.split('').every(isEqualElementOnOtherSide)
 
-module.exports = palindrome;
+  // return str.split('').every((char, index) => {
+  //     return char === str[str.length -index -1]
+  // })
+}
+
+console.log(palindrome('abba'))
+console.log(palindrome('abcdefg'))
+
+module.exports = palindrome
+
+// Solution 1
+// const reversed = str.split('').reduce((rev, char) => (char + rev), '')
+// return reversed === str
