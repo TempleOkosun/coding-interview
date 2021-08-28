@@ -1,0 +1,28 @@
+{
+  "name": "algocasts",
+  "version": "1.0.0",
+  "description": "coding interview preparation",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "../node_modules/.bin/prettier --check javascript",
+    "format": "../node_modules/.bin/prettier --write javascript",
+    "success-message": "echo Thanks for contributing $GIT_AUTHOR_NAME"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephenGrider/AlgoCasts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephenGrider/AlgoCasts/issues"
+  },
+  "homepage": "https://github.com/StephenGrider/AlgoCasts#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.2",
+    "prettier": "^2.3.2"
+  }
+}
