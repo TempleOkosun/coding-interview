@@ -49,6 +49,106 @@ class LinkedList {
   clear() {
     this.head = null
   }
+
+  removeFirst() {
+    if (!this.head) {
+      return
+    }
+
+    this.head = this.head.next
+  }
+
+  removeLast() {
+    if (!this.head) {
+      return
+    }
+    if (!this.head.next) {
+      this.head = null
+      return
+    }
+
+    let prev = this.head
+    let node = this.head.next
+
+    while (node.next) {
+      prev = node
+      node = node.next
+    }
+    prev.next = null
+  }
+
+  insertLast(data) {
+    const last = this.getLast()
+    if (last) {
+      // Last exists
+      last.next = new Node(data)
+    } else {
+      // chain is empty
+      this.head = new Node(data)
+    }
+  }
+
+  getAt(index) {
+    let counter = 0
+    let node = this.head
+    while (node) {
+      if (counter === index) {
+        return node
+      }
+      counter++
+      node = node.next
+    }
+    return null
+  }
+
+  removeAt(index) {
+    if (!this.head) {
+      return
+    }
+
+    if (index === 0) {
+      this.head = this.head.next
+      return
+    }
+
+    const prev = this.getAt(index - 1)
+    if (!prev || !prev.next) {
+      return
+    }
+    prev.next = prev.next.next
+  }
+
+  insertAt(data, index) {
+    if (!this.head) {
+      this.head = new Node(data)
+      return
+    }
+
+    if (index === 0) {
+      this.head = new Node(data, this.head)
+      return
+    }
+    const prev = this.getAt(index - 1) || this.getLast()
+    prev.next = new Node(data, prev.next)
+  }
+
+  forEach(fn) {
+    let node = this.head
+    let counter = 0
+    while (node) {
+      fn(node, counter)
+      node = node.next
+      counter++
+    }
+  }
+
+  *[Symbol.iterator]() {
+    let node = this.head
+    while (node) {
+      yield node
+      node = node.next
+    }
+  }
 }
 
 module.exports = { Node, LinkedList }
