@@ -106,3 +106,5 @@ dist
 # .idea IntelliJ Folder
 /.idea
 
+
+/node_modules
