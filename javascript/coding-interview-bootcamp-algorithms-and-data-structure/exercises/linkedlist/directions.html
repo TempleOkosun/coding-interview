@@ -1,7 +1,11 @@
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  />
   <style>
-    pre, code {
+    pre,
+    code {
       white-space: pre-line;
       min-width: 400px;
     }
@@ -25,12 +29,10 @@
         <td>(Data, Node)</td>
         <td>Node</td>
         <td>
-          Creates a class instance to represent a node.  The node should
-          have two properties, 'data' and 'next'.  Accept both
-          of these as arguments to the 'Node' constructor, then
-          assign them to the instance as properties 'data' and 'next'.
-          If 'next' is not provided to the constructor, then default its
-          value to be 'null'.
+          Creates a class instance to represent a node. The node should have two properties, 'data'
+          and 'next'. Accept both of these as arguments to the 'Node' constructor, then assign them
+          to the instance as properties 'data' and 'next'. If 'next' is not provided to the
+          constructor, then default its value to be 'null'.
         </td>
         <td>
           <pre>
@@ -62,11 +64,10 @@
         <td>-</td>
         <td>(LinkedList)</td>
         <td>
-          Create a class to represent a linked list.  When created,
-          a linked list should have *no* head node associated with it.
-          The LinkedList instance will have one property, 'head', which
-          is a reference to the first node of the linked list.  By default
-          'head' should be 'null'.
+          Create a class to represent a linked list. When created, a linked list should have *no*
+          head node associated with it. The LinkedList instance will have one property, 'head',
+          which is a reference to the first node of the linked list. By default 'head' should be
+          'null'.
         </td>
         <td>
           <pre>
@@ -80,9 +81,9 @@
         <td>(data)</td>
         <td>-</td>
         <td>
-          Creates a new Node from argument 'data' and assigns the resulting
-          node to the 'head' property.  Make sure to handle the case in which
-          the linked list already has a node assigned to the 'head' property.
+          Creates a new Node from argument 'data' and assigns the resulting node to the 'head'
+          property. Make sure to handle the case in which the linked list already has a node
+          assigned to the 'head' property.
         </td>
         <td>
           <pre>
@@ -95,9 +96,7 @@
         <td>size</td>
         <td>-</td>
         <td>(integer)</td>
-        <td>
-          Returns the number of nodes in the linked list.
-        </td>
+        <td>Returns the number of nodes in the linked list.</td>
         <td>
           <pre>
             const list = new LinkedList();
@@ -112,9 +111,7 @@
         <td>getFirst</td>
         <td>-</td>
         <td>(Node)</td>
-        <td>
-          Returns the first node of the linked list.
-        </td>
+        <td>Returns the first node of the linked list.</td>
         <td>
           <pre>
             const list = new LinkedList();
@@ -125,18 +122,10 @@
         </td>
       </tr>
       <tr>
-        <td>
-          getLast
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          (Node)
-        </td>
-        <td>
-          Returns the last node of the linked list
-        </td>
+        <td>getLast</td>
+        <td>-</td>
+        <td>(Node)</td>
+        <td>Returns the last node of the linked list</td>
         <td>
           <pre>
             const list = new LinkedList();
@@ -147,18 +136,10 @@
         </td>
       </tr>
       <tr>
-        <td>
-          clear
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Empties the linked list of any nodes.
-        </td>
+        <td>clear</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Empties the linked list of any nodes.</td>
         <td>
           <pre>
             const list = new LinkedList();
@@ -170,18 +151,12 @@
         </td>
       </tr>
       <tr>
+        <td>removeFirst</td>
+        <td>-</td>
+        <td>-</td>
         <td>
-          removeFirst
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Removes only the first node of the linked list.  The list's head should
-          now be the second element.
+          Removes only the first node of the linked list. The list's head should now be the second
+          element.
         </td>
         <td>
           <pre>
@@ -194,18 +169,10 @@
         </td>
       </tr>
       <tr>
-        <td>
-          removeLast
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Removes the last node of the chain
-        </td>
+        <td>removeLast</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Removes the last node of the chain</td>
         <td>
           <pre>
             const list = new LinkedList();
@@ -218,18 +185,10 @@
         </td>
       </tr>
       <tr>
-        <td>
-          insertLast
-        </td>
-        <td>
-          (Data)
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Inserts a new node with provided data at the end of the chain
-        </td>
+        <td>insertLast</td>
+        <td>(Data)</td>
+        <td>-</td>
+        <td>Inserts a new node with provided data at the end of the chain</td>
         <td>
           <pre>
             const list = new LinkedList();
@@ -241,18 +200,10 @@
         </td>
       </tr>
       <tr>
-        <td>
-          getAt
-        </td>
-        <td>
-          (integer)
-        </td>
-        <td>
-          (Node)
-        </td>
-        <td>
-          Returns the node at the provided index
-        </td>
+        <td>getAt</td>
+        <td>(integer)</td>
+        <td>(Node)</td>
+        <td>Returns the node at the provided index</td>
         <td>
           <pre>
             const list = new List();
@@ -264,18 +215,10 @@
         </td>
       </tr>
       <tr>
-        <td>
-          removeAt
-        </td>
-        <td>
-          (integer)
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Removes node at the provided index
-        </td>
+        <td>removeAt</td>
+        <td>(integer)</td>
+        <td>-</td>
+        <td>Removes node at the provided index</td>
         <td>
           <pre>
             const list = new List();
@@ -288,19 +231,12 @@
         </td>
       </tr>
       <tr>
+        <td>insertAt</td>
+        <td>(Data, integer)</td>
+        <td>-</td>
         <td>
-          insertAt
-        </td>
-        <td>
-          (Data, integer)
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Create an insert a new node at provided index.
-          If index is out of bounds, add the node to the end
-          of the list.
+          Create an insert a new node at provided index. If index is out of bounds, add the node to
+          the end of the list.
         </td>
         <td>
           <pre>
@@ -314,18 +250,10 @@
         </td>
       </tr>
       <tr>
-        <td>
-          forEach
-        </td>
-        <td>
-          (function)
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Calls the provided function with every node of the chain
-        </td>
+        <td>forEach</td>
+        <td>(function)</td>
+        <td>-</td>
+        <td>Calls the provided function with every node of the chain</td>
         <td>
           <pre>
             const list = new List();
@@ -343,18 +271,10 @@
         </td>
       </tr>
       <tr>
-        <td>
-          for...of Loop
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          -
-        </td>
-        <td>
-          Linked list should be compatible as the subject of a 'for...of' loop
-        </td>
+        <td>for...of Loop</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Linked list should be compatible as the subject of a 'for...of' loop</td>
         <td>
           <pre>
             const list = new List();

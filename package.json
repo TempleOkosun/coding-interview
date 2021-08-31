@@ -4,9 +4,10 @@
   "description": "coding interview preparation",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "../node_modules/.bin/prettier --check javascript",
-    "format": "../node_modules/.bin/prettier --write javascript",
-    "success-message": "echo Thanks for contributing $GIT_AUTHOR_NAME"
+    "lint": "prettier --check .",
+    "format": "prettier --write .",
+    "success-message": "echo Thanks for contributing $GIT_AUTHOR_NAME",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^7.0.2",
+    "husky": "^7.0.0",
     "prettier": "^2.3.2"
   }
 }
