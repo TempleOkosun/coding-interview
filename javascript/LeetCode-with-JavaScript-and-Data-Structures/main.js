@@ -47,3 +47,30 @@ const twoSum = (nums, target) => {
     }
   }
 }
+
+// 3. Length of last word
+// Solution
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const lengthOfLastWord1 = function (s) {
+  let onLastWord = false
+  let lastWordLength = 0
+
+  if (s.length === 0) {
+    return lastWordLength
+  }
+
+  for (let i = s.length - 1; i >= 0; i--) {
+    if (s.charAt(i) !== ' ') {
+      onLastWord = true
+      lastWordLength++
+    } else {
+      if (onLastWord) {
+        break
+      }
+    }
+  }
+  return lastWordLength
+}
