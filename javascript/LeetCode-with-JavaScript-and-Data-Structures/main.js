@@ -24,3 +24,26 @@ const deleteDuplicates = (head) => {
   }
   return head
 }
+
+// 2. Two sum
+// Solution
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+const twoSum = (nums, target) => {
+  let numList = new Map()
+
+  for (let i = 0; i < nums.length; i++) {
+    const currentNum = nums[i]
+    const compliment = target - currentNum
+
+    if (numList.has(compliment)) {
+      return [numList.get(compliment), i]
+    } else {
+      // set(key, value)
+      numList.set(currentNum, i)
+    }
+  }
+}
