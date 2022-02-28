@@ -49,7 +49,7 @@ const twoSum = (nums, target) => {
 }
 
 // 3. Length of last word
-// Solution
+// Solution 1
 /**
  * @param {string} s
  * @return {number}
@@ -73,4 +73,15 @@ const lengthOfLastWord1 = function (s) {
     }
   }
   return lastWordLength
+}
+
+// Solution 2
+const lengthOfLastWord2 = function (s) {
+  // \s: matches any whitespace symbol: spaces, tabs, and line breaks
+  // +: match one or more of the preceding tokens (referencing \s)
+  // g: the g at the end indicates iterative searching throughout the full string
+  const cleanedS = s.replace(/\s+/g, ' ').trim()
+  const myArray = cleanedS.split(' ')
+  const lastWord = myArray.pop()
+  return lastWord.length
 }
