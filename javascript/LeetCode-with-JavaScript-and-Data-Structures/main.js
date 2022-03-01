@@ -85,3 +85,59 @@ const lengthOfLastWord2 = function (s) {
   const lastWord = myArray.pop()
   return lastWord.length
 }
+
+// 4. Longest common prefix
+// Solution 1
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+const longestCommonPrefix = (strs) => {
+  strs.sort((a, b) => a.length - b.length)
+  const shortestWord = strs[0]
+  const otherWords = strs.slice(1)
+  let prefix = ''
+
+  if (strs.length === 0) {
+    return prefix
+  }
+
+  for (let i = 0; i < shortestWord.length; i++) {
+    const char = shortestWord[i]
+    for (let j = 0; j < otherWords.length; j++) {
+      if (char !== otherWords[j][i]) {
+        return prefix
+      }
+    }
+    prefix = prefix + char
+  }
+  return prefix
+}
+
+// 5. Length of longest substring
+// Solution 1
+/**
+ * @param {string} s
+ * @return {number}
+ */
+const lengthOfLongestSubstring = (s) => {
+  let max = 0
+  let map = new Map()
+  let leftPtr = 0
+  let rightPtr = 1
+
+  if (s.length === 1) return 1
+
+  map.set(s[leftPtr], leftPtr)
+
+  while (rightPtr < s.length) {
+    if (map.has(s[rightPtr]) && map.get(s[rightPtr] >= leftPtr)) {
+      leftPtr = map.get(s[rightPtr]) + 1
+    }
+    map.set(s[rightPtr], rightPtr)
+    let windowLength = rightPtr - leftPtr + 1
+    max = Math.max(max, windowLength)
+    rightPtr += 1
+  }
+  return max
+}
