@@ -176,3 +176,48 @@ const towerOfHanoi = (n, fromRod, toRod, auxRod) => {
 }
 
 towerOfHanoi(4, 'X', 'Y', 'Z')
+
+// 8. Harmless Ransome Note
+// Solution 1
+
+const harmlessRansomeNote = (noteText, magazineText) => {
+  const noteArr = noteText.split(' ')
+  const magazineArr = magazineText.split(' ')
+
+  const magazineMap = {}
+  magazineArr.forEach((word) => {
+    if (!magazineMap[word]) magazineMap[word] = 0
+    magazineMap[word]++
+  })
+
+  let noteIsPossible = true
+  noteArr.forEach((word) => {
+    if (magazineMap[word]) {
+      magazineMap[word]--
+      if (magazineMap[word] < 0) noteIsPossible = false
+    } else {
+      noteIsPossible = false
+    }
+  })
+  return noteIsPossible
+}
+
+// 9. Palindrome
+// Solution 1
+
+const isPalindrome = (string) => {
+  const stringInput = string.toLowerCase()
+  const characterArr = stringInput.split('')
+  const validCharacters = 'abcdefghijklmnopqrstuvwxyz'.split('')
+
+  const lettersArr = []
+  characterArr.forEach((char) => {
+    // indexOf array method returns the index in an array of the arg passed in
+    // > -1 because 0 is the 1st index
+    // if arg is not present, -1 is returned
+    if (validCharacters.indexOf(char) > -1) {
+      lettersArr.push(char)
+    }
+  })
+  return lettersArr.join('') === lettersArr.reverse().join('')
+}
