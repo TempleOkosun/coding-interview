@@ -26,7 +26,7 @@ const deleteDuplicates = (head) => {
 }
 
 // 2. Two sum
-// Solution
+// Solution 1
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -46,6 +46,22 @@ const twoSum = (nums, target) => {
       numList.set(currentNum, i)
     }
   }
+}
+
+// Solution 2
+const twoSum2 = (numArray, sum) => {
+  const pairs = []
+  const hashtable = []
+
+  for (let i = 0; i < numArray.length; i++) {
+    const currNum = numArray[i]
+    const counterpart = sum - currNum
+    if (hashtable.indexOf(counterpart) !== -1) {
+      pairs.push([currNum, counterpart])
+    }
+    hashtable.push(currNum)
+  }
+  return pairs
 }
 
 // 3. Length of last word
@@ -345,3 +361,54 @@ const meanMedianMode = (arr) => {
     mode: getMode(arr),
   }
 }
+
+// Recursion
+const factorial = (num) => {
+  //Base case
+  if (num === 1) {
+    return num
+  }
+  // Recursive case
+  else {
+    return num * factorial(num - 1)
+  }
+}
+
+// 13. Binary Search
+const binarySearch = (numArray, key) => {
+  const middleIdx = Math.floor(numArray.length / 2)
+  const middleElem = numArray[middleIdx]
+
+  if (middleElem === key) return true
+  else if (middleElem < key && numArray.length > 1) {
+    return binarySearch(numArray.splice(middleIdx, numArray.length), key)
+  } else if (middleElem > key && numArray.length > 1) {
+    return binarySearch(numArray.splice(0, middleIdx), key)
+  } else return false
+}
+
+// 14. Fibonacci
+const fibonacci = (position) => {
+  if (position < 3) return 1
+  else {
+    return fibonacci(position - 1) + fibonacci(position - 2)
+  }
+}
+
+// 15. Fibonacci Memo
+const fibMemo = (index, cache = []) => {
+  // cache = cache || []
+  // Base case is to see if the position we are looking for has been calculated.
+  // if so just return it.
+  if (cache[index]) return cache[index]
+  // recursive case
+  else {
+    if (index < 3) return 1
+    else {
+      cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache)
+    }
+  }
+  return cache[index]
+}
+
+fibMemo(20)
