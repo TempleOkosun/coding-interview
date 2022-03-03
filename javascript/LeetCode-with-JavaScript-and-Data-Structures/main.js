@@ -256,3 +256,22 @@ const caesarCipher = (str, num) => {
   }
   return newString
 }
+
+// 11. Reverse words
+// Solution 1
+const reverseWord = (string) => {
+  const wordsArr = string.split(' ')
+  const reversedWordsArr = []
+
+  wordsArr.forEach((word) => {
+    // we don't want to use the reverse array method
+    // use for loop going backwards
+    let reversedWord = ''
+    for (let i = word.length - 1; i >= 0; i--) {
+      reversedWord += word[i]
+    }
+    // push completed reversed word into arr
+    reversedWordsArr.push(reversedWord)
+  })
+  return reversedWordsArr.join(' ')
+}
