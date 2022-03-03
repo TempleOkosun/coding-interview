@@ -204,7 +204,6 @@ const harmlessRansomeNote = (noteText, magazineText) => {
 
 // 9. Palindrome
 // Solution 1
-
 const isPalindrome = (string) => {
   const stringInput = string.toLowerCase()
   const characterArr = stringInput.split('')
@@ -220,4 +219,40 @@ const isPalindrome = (string) => {
     }
   })
   return lettersArr.join('') === lettersArr.reverse().join('')
+}
+
+// 10. Caesar Cipher
+// Solution 1
+const caesarCipher = (str, num) => {
+  // If we pass a num that is huge we basically want to loop through the alphabet
+  // till we have shifted the letter forward n times
+  // we can achieve this functionality without loop using %
+  num = num % 26 // Turn the num into an appropriate value
+  const lowerCaseString = str.toLowerCase()
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+
+  let newString = ''
+  for (let i = 0; i < lowerCaseString.length; i++) {
+    const currentLetter = lowerCaseString[i]
+    if (currentLetter === ' ') {
+      newString += currentLetter
+      continue
+    }
+    const currentIndex = alphabet.indexOf(currentLetter)
+    let newIndex = currentIndex + num
+    // Loop the letter back to the beginning of the alphabet
+    if (newIndex > 25) {
+      newIndex = newIndex - 26
+    }
+    if (newIndex < 0) {
+      newIndex = 26 + newIndex
+    }
+    // edge case
+    if (str[i] === str[i].toUpperCase()) {
+      newString += alphabet[newIndex].toUpperCase()
+    } else {
+      newString += alphabet[newIndex]
+    }
+  }
+  return newString
 }
