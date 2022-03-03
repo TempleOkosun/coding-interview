@@ -411,4 +411,29 @@ const fibMemo = (index, cache = []) => {
   return cache[index]
 }
 
+// 16. Sieve of Eratosthenes
+const sieveOfEratosthenes = (n) => {
+  // return all prime numbers up to 'num' in an array
+  const primes = []
+
+  for (let i = 0; i <= n; i++) {
+    primes[i] = true
+  }
+  primes[0] = false
+  primes[1] = false
+
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    // j*i gives each multiple of the element at the current index i
+    for (let j = 2; j * i <= n; j++) {
+      primes[i * j] = false
+    }
+  }
+
+  const result = []
+  for (let i = 0; i < primes.length; i++) {
+    if (primes[i]) result.push(i)
+  }
+  return result
+}
+
 fibMemo(20)
