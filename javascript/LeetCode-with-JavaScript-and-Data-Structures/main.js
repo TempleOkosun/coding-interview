@@ -436,4 +436,66 @@ const sieveOfEratosthenes = (n) => {
   return result
 }
 
-fibMemo(20)
+// 17. Bubble Sort
+const bubbleSort = (array) => {
+  // return array, sorted with bubble sort
+  // the larger numbers bubble up to the end or top of the array
+  for (let i = array.length; i > 0; i--) {
+    for (let j = 0; j < i; j++) {
+      if (array[j] > array[j + 1]) {
+        let temp = array[j]
+        array[j] = array[j + 1]
+        array[j + 1] = temp
+      }
+    }
+  }
+  return array
+}
+
+// 18. Merge Sort
+const mergeSort = (arr) => {
+  if (arr.length < 2) return arr
+  const middleIndex = Math.floor(arr.length / 2)
+  const firstHalf = arr.slice(0, middleIndex)
+  const secondHalf = arr.slice(middleIndex)
+
+  return merge(mergeSort(firstHalf), mergeSort(secondHalf))
+}
+
+// 18. Merge Sort
+const merge = (array1, array2) => {
+  let result = []
+  while (array1.length && array2.length) {
+    let minElem
+    if (array1[0] < array2[0]) minElem = array1.shift()
+    else minElem = array2.shift()
+    result.push(minElem)
+  }
+  if (array1.length) result = result.concat(array1)
+  else result = result.concat(array2)
+  return result
+}
+
+// 18. Max Stock Profit
+const maxStockProfit = (pricesArr) => {
+  // takes in array of prices as parameter
+  // returns the max possible profits of the day
+  let maxProfit = -1
+  let buyPrice = 0
+  let sellPrice = 0
+
+  let changeBuyPrice = true
+  for (let i = 0; i < pricesArr.length; i++) {
+    if (changeBuyPrice) buyPrice = pricesArr[i]
+    sellPrice = pricesArr[i + 1]
+
+    if (sellPrice < buyPrice) {
+      changeBuyPrice = true
+    } else {
+      let tempProfit = sellPrice - buyPrice
+      if (tempProfit > maxProfit) maxProfit = tempProfit
+      changeBuyPrice = false
+    }
+  }
+  return maxProfit
+}
