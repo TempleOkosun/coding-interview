@@ -13,3 +13,5 @@ const countUniqueValues = (arr) => {
   }
   return i + 1
 }
+
+module.exports = countUniqueValues
