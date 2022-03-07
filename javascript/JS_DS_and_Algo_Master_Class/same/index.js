@@ -9,6 +9,7 @@ const same = (arr1, arr2) => {
   let frequencyCounter2 = {}
 
   for (const val of arr1) {
+    // frequencyCounter1[val] = frequencyCounter1[val] + 1 || 1
     frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1
   }
 
@@ -29,3 +30,5 @@ const same = (arr1, arr2) => {
   }
   return true
 }
+
+module.exports = same
