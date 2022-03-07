@@ -441,7 +441,7 @@ const bubbleSort = (array) => {
   // return array, sorted with bubble sort
   // the larger numbers bubble up to the end or top of the array
   for (let i = array.length; i > 0; i--) {
-    for (let j = 0; j < i; j++) {
+    for (let j = 0; j < i - 1; j++) {
       if (array[j] > array[j + 1]) {
         let temp = array[j]
         array[j] = array[j + 1]
