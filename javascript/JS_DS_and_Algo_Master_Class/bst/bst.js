@@ -68,6 +68,18 @@ class BinarySearchTree {
     }
     return data
   }
+
+  DFSPreOrder() {
+    let data = [],
+      current = this.root
+    const traverse = (node) => {
+      data.push(node.value)
+      if (node.left) traverse(node.left)
+      if (node.right) traverse(node.right)
+    }
+    traverse(current)
+    return data
+  }
 }
 
 module.exports = { Node, BinarySearchTree }
